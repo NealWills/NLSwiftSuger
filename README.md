@@ -9,6 +9,19 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```
+    1. 'pod install' To Install
+    2. 'import NLSwiftSuger' To import Module
+    3. Just use it like this
+    
+    let btn = UIButton.newItem()
+        .nl
+        .set(superView: self.view)
+        .set(frame: CGRect.init(x: 100, y: 150, width: 50, height: 50))
+        .set(backgroundColor: UIColor.red)
+        .item()
+```
+
 ## Requirements
 
 ## Installation
