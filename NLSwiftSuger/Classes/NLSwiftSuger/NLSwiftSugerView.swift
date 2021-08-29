@@ -51,47 +51,62 @@ public extension NLReacitve where Base: UIView {
         return self
     }
     
+    @discardableResult
+    func set(clipsToBounds: Bool, when: Bool = true) -> Self {
+        if when {
+            self.base.clipsToBounds = clipsToBounds
+        }
+        return self
+    }
+    
+    @discardableResult
+    func set(layerCornerRadius: CGFloat?, when: Bool = true) -> Self {
+        if when {
+            self.base.layer.cornerRadius = layerCornerRadius ?? 0
+        }
+        return self
+    }
+    
+    @discardableResult
+    func set(layerBorderWidth: CGFloat?, when: Bool = true) -> Self {
+        if when {
+            self.base.layer.borderWidth = layerBorderWidth ?? 0
+        }
+        return self
+    }
+    
+    @discardableResult
+    func set(layerBorderColor: UIColor?, when: Bool = true) -> Self {
+        if when {
+            self.base.layer.borderColor = layerBorderColor?.cgColor
+        }
+        return self
+    }
+    
+    @discardableResult
+    func set(alpha: CGFloat?, when: Bool = true) -> Self {
+        if when {
+            self.base.alpha = alpha ?? 1.0
+        }
+        return self
+    }
+    
+    @discardableResult
+    func set(hidden: Bool?, when: Bool = true) -> Self {
+        if when {
+            self.base.isHidden = hidden ?? false
+        }
+        return self
+    }
+    
+    @discardableResult
+    func set(tapGes selector:Selector, target: Any) -> Self {
+        
+        let tapGes = UITapGestureRecognizer.init(target: target, action: selector)
+        tapGes.numberOfTouchesRequired = 1
+        self.base.addGestureRecognizer(tapGes)
+        
+        return self
+    }
+    
 }
-
-#if canImport(SnapKit)
-
-import SnapKit
-
-public extension NLReacitve where Base: UIView {
-    
-    
-    @discardableResult
-    public func setSnp(makeConstraints: (_ make: ConstraintMaker) -> Void, when: Bool = true) -> Self {
-        if when {
-            self.base.snp.makeConstraints(makeConstraints)
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func setSnp(remakeConstraints: (_ make: ConstraintMaker) -> Void, when: Bool = true) -> Self {
-        if when {
-            self.base.snp.remakeConstraints(remakeConstraints)
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func setSnp(updateConstraints: (_ make: ConstraintMaker) -> Void, when: Bool = true) -> Self {
-        if when {
-            self.base.snp.updateConstraints(updateConstraints)
-        }
-        return self
-    }
-    
-    @discardableResult
-    public func setSnpRemove(when: Bool = true) -> Self {
-        if when {
-            self.base.snp.removeConstraints()
-        }
-        return self
-    }
-    
-}
-
-#endif

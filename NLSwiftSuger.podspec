@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NLSwiftSuger'
-  s.version          = '0.0.1'
-  s.summary          = 'A short description of NLSwiftSuger.'
+  s.version          = '0.0.2'
+  s.summary          = 'A suger for swift language in ios'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A pod for swift suger
+  A suger for swift language in ios, then , we can developer more quickly...
                        DESC
 
   s.homepage         = 'https://github.com/NealWills/NLSwiftSuger'
@@ -26,9 +26,10 @@ A pod for swift suger
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'NealWills' => 'NealWills93@gmail.com' }
   s.source           = { :git => 'https://github.com/NealWills/NLSwiftSuger.git', :tag => s.version.to_s }
+  s.swift_version    = '5.0'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'NLSwiftSuger/Classes/**/*'
   
