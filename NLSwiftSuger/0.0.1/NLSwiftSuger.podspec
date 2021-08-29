@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'NLSwiftSuger'
   s.version          = '0.0.1'
-  s.summary          = 'A short description of NLSwiftSuger.'
+  s.summary          = 'A suger for swift language in ios'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A pod for swift suger
+  A suger for swift language in ios, then , we can developer more quickly...
                        DESC
 
   s.homepage         = 'https://github.com/NealWills/NLSwiftSuger'
