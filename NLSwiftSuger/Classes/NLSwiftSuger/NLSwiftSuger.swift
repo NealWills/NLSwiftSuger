@@ -5,9 +5,6 @@
 //  Created by Neal Wills on 2021/8/29.
 //
 
-import Foundation
-import UIKit
-
 public struct NLReacitve<Base> {
     public let base: Base
     
@@ -15,6 +12,10 @@ public struct NLReacitve<Base> {
         self.base = base
     }
     
+    @discardableResult
+    public func item() -> Base {
+        return self.base
+    }
 }
 
 public protocol NLSwiftSugerCompatible {
@@ -29,15 +30,17 @@ public protocol NLSwiftSugerCompatible {
 extension NLSwiftSugerCompatible {
     public static var nl: NLReacitve<Self>.Type {
         get { NLReacitve<Self>.self }
+        
+        set { }
     }
     
     public var nl: NLReacitve<Self> {
         get { NLReacitve(self) }
         
-        set {}
+        set { }
     }
 }
 
-extension NSObject: NLSwiftSugerCompatible {}
 
-extension UIView: NLSwiftSugerCompatible {}
+import Foundation
+extension NSObject: NLSwiftSugerCompatible { }

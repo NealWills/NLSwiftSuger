@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 import NLSwiftSuger
 
 class ViewController: UIViewController {
@@ -15,9 +15,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-            
+        let btn = UIButton.newItem()
+            .nl
+            .set(superView: self.view)
+            .set(frame: CGRect.init(x: 100, y: 150, width: 50, height: 50))
+            .set(backgroundColor: UIColor.red)
+            .item()
         
     }
 
